@@ -1,0 +1,8 @@
+{
+  "name": "qrscan",
+  "short_name": "qrscan",
+  "start_url": "./qrscan",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#4DBA87"
+}
