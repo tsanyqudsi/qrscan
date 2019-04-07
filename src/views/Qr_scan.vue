@@ -3,28 +3,29 @@
     p( class="error") {{ error }}
     p( class="decode-result") Last result: {{ result }}
     qrcode-stream( @decode="onDecode" @init="onInit")
-    div( class="form-group")
-      label Full Name :
-      d-input( class="form-control" type="text" v-model="fullname" placeholder="Fullname")
-    div( class="form-group")
-      label Age :
-      d-input( class="form-control" type="text" v-model="age" placeholder="Age")
-    div( class="form-group")
-      div( class="inline fields")
-        label Sex :
-        div( class="field")
-          div( class="ui radio checkbox")
-            input( type="radio" value="Male" v-model="sex")
-            label Male
-        div( class="field")
-          div( class="ui radio checkbox")
-            input( type="radio" value="Female" v-model="sex")
-            label Female
-    div( class="form-group")
-      label QR Code :
-      d-input( class="form-control" type="text" v-model="result" disabled)
-    div( class="form-group")
-      d-button( class="btn-accent" v-on:click="submitForm()") Submit
+    div( v-if="form != 0")
+      div( class="form-group")
+        label Full Name :
+        d-input( class="form-control" type="text" v-model="fullname" placeholder="Fullname")
+      div( class="form-group")
+        label Age :
+        d-input( class="form-control" type="text" v-model="age" placeholder="Age")
+      div( class="form-group")
+        div( class="inline fields")
+          label Sex :
+          div( class="field")
+            div( class="ui radio checkbox")
+              input( type="radio" value="Male" v-model="sex")
+              label Male
+          div( class="field")
+            div( class="ui radio checkbox")
+              input( type="radio" value="Female" v-model="sex")
+              label Female
+      div( class="form-group")
+        label QR Code :
+        d-input( class="form-control" type="text" v-model="result" disabled)
+      div( class="form-group")
+        d-button( class="btn-accent" v-on:click="submitForm()") Submit
   </div>
 </template>
 
