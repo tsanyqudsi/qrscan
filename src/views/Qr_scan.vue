@@ -39,7 +39,7 @@ export default {
       sex: '',
       result: '',
       error: '',
-      form: 1
+      form: 0
     }
   },
 
