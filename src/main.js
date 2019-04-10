@@ -6,7 +6,6 @@ import axios from 'axios';
 import VueAxios from 'vue-axios'
 import VueSession from 'vue-session';
 import VueQrcodeReader from "vue-qrcode-reader";
-import Fragment from 'vue-fragment'
 
 // Styles
 import 'semantic-ui-css/semantic.min.css';
@@ -35,7 +34,6 @@ Vue.use(VueAxios, axios);
 Vue.use(SuiVue);
 Vue.use(VueSession);
 Vue.use(VueQrcodeReader);
-Vue.use(Fragment.Plugin)
 
 new Vue({
   router,

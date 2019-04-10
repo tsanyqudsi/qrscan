@@ -34,3 +34,11 @@ export default {
 };
 </script>
 
+<style scoped>
+@media only screen and (max-width: 767.98px) {
+    .fixed-bottom {
+        position: relative !important;
+    }
+}
+</style>
+
