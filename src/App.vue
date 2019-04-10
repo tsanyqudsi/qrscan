@@ -1,8 +1,6 @@
-<template>
-  <component v-if="route != 'home' && route != 'login' && route != 'register'" :is="layout">
-    <router-view/>
-  </component>
-  <router-view v-else/>
+<template lang='pug'>
+	component(is='layout')
+		router-view
 </template>
 
 <script>

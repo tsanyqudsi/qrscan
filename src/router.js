@@ -11,6 +11,7 @@ import Tables from './views/Tables.vue';
 import BlogPosts from './views/BlogPosts.vue';
 import Login from './views/Login.vue';
 import Register from './views/Register.vue';
+import QRScan from './views/Qr_scan.vue';
 
 Vue.use(Router);
 
@@ -41,7 +42,7 @@ export default new Router({
     {
       path: '/qrscan',
       name: 'qrscan',
-      component: () => import('./views/Qr_scan.vue'),
+      component: QRScan,
     },
     {
       path: '/blog-overview',
