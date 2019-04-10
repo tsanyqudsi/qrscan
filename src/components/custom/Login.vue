@@ -1,43 +1,37 @@
-<template>
-  <d-card class="card-small h-100">
-
-    <!-- Component Header -->
-    <d-card-header class="border-bottom">
-      <h6 class="m-0">{{ title }}</h6>
-    </d-card-header>
-
-    <d-card-body class="d-flex flex-column">
-      <!-- <d-form class="quick-post-form"> -->
-
-      <div class="form-group">
-        <d-input class="form-control" v-model="input.email" placeholder="Email" />
-      </div>
-
-      <div class="form-group">
-        <d-input class="form-control" type="password" v-model="input.password" placeholder="Password" />
-      </div>
-
-      <div class="form-group">
-        <d-button class="btn-accent" v-on:click="login">Submit</d-button>
-      </div>
-
-      <!-- </d-form> -->
-    </d-card-body>
-
-  </d-card>
+<template lang="pug">
+  d-card.mx-auto.my-auto
+    d-card-body(align='center')
+      d-image(src='favicon/ms-icon-70x70.png')
+      h6 Welcome To {{title}}
+      d-form(@submit='login', validated='')
+      .form-group
+        label.sr-only(for='f2_Email') Email Address
+        d-input#f2_Email.mb-2.mr-sm-2.mb-sm-0(v-model='input.email', placeholder='email@example.com', required='')
+          d-form-invalid-feedback Invalid email address!
+          d-form-valid-feedback Your email looks good!
+          small.form-text.text-muted We'll never share your email with anyone else.
+      .form-group
+        label.sr-only(for='f2_PasswordInput') Password
+        d-form-input#f2_PasswordInput(type='password', v-model='input.password', required='', placeholder='Password')
+        d-form-invalid-feedback Please provide a valid password!
+      //- .form-group
+        d-form-checkbox(v-model='form.tos', value='tos_agree', unchecked-value='tos_do_not_agree')
+          | I agree with the 
+          a(href='#') Terms of Service
+      d-button(type='submit') Login
 </template>
 
 <script>
 import address from '@/address';
 export default {
-  name: 'login-draft',
+  name: 'login',
   props: {
     /**
        * The component's title.
        */
     title: {
       type: String,
-      default: 'Login Draft',
+      default: 'Application',
     },
   },
   data(){
@@ -80,3 +74,14 @@ export default {
   }
 };
 </script>
+
+<style lang="stylus" scoped>
+.btn
+  border-radius : 1rem
+
+.card 
+  box-shadow: 0 -4px 0 rgba(0,0,0,0.3)
+
+.card-body
+  min-width : 300px
+</style>
