@@ -6,6 +6,7 @@ import axios from 'axios';
 import VueAxios from 'vue-axios'
 import VueSession from 'vue-session';
 import VueQrcodeReader from "vue-qrcode-reader";
+import Fragment from 'vue-fragment'
 
 // Styles
 import 'semantic-ui-css/semantic.min.css';
@@ -20,10 +21,12 @@ import './registerServiceWorker';
 
 // Layouts
 import Default from '@/layouts/Default.vue';
+import NonAdmin from '@/layouts/NonAdmin.vue';
 
 ShardsVue.install(Vue);
 
 Vue.component('default-layout', Default);
+Vue.component('non-admin-layout',NonAdmin);
 
 Vue.config.productionTip = false;
 Vue.prototype.$eventHub = new Vue();
@@ -32,6 +35,7 @@ Vue.use(VueAxios, axios);
 Vue.use(SuiVue);
 Vue.use(VueSession);
 Vue.use(VueQrcodeReader);
+Vue.use(Fragment.Plugin)
 
 new Vue({
   router,
