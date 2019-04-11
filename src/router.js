@@ -27,21 +27,25 @@ export default new Router({
     {
       path: '/',
       name: 'home',
+      meta: { layout:'non-admin' },
       component: Home,
     },
     {
       path: '/login',
       name: 'login',
+      meta: { layout:'non-admin' },
       component: Login,
     },
     {
       path: '/register',
       name: 'register',
+      meta: { layout:'non-admin' },
       component: Register,
     },
     {
       path: '/qrscan',
       name: 'qrscan',
+      meta: { layout:'non-admin' },
       component: QRScan,
     },
     {

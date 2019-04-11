@@ -1,5 +1,5 @@
 <template lang='pug'>
-	component(is='layout')
+	component(:is='layout')
 		router-view
 </template>
 

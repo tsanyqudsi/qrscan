@@ -1,8 +1,7 @@
 <template lang='pug'>
-.home.h-100
-	.container
-		d-link.btn( to="/login") Sign In
-		d-link.btn( to="/register") Sign Up
+d-container.h-100
+	d-link.btn( to="/login") Sign In
+	d-link.btn( to="/register") Sign Up
 </template>
 
 <script>
@@ -13,10 +12,7 @@ export default {
 };
 </script>
 
-<style lang='stylus' scope>
-body
-  background-image:url('https://source.unsplash.com/random')
-  background-size:cover
+<style lang='stylus' scoped>
 .home
   background-color:rgba(255,255,255,0.7)
 </style>

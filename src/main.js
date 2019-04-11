@@ -20,10 +20,12 @@ import './registerServiceWorker';
 
 // Layouts
 import Default from '@/layouts/Default.vue';
+import NonAdmin from '@/layouts/NonAdmin.vue';
 
 ShardsVue.install(Vue);
 
 Vue.component('default-layout', Default);
+Vue.component('non-admin-layout',NonAdmin);
 
 Vue.config.productionTip = false;
 Vue.prototype.$eventHub = new Vue();
