@@ -1,7 +1,7 @@
 <template lang='pug'>
-d-container.h-100
-	d-link.btn( to="/login") Sign In
-	d-link.btn( to="/register") Sign Up
+d-container.vh-100.p-0(fluid)
+  img(src="@/assets/images/logo.svg")
+  span ACMS
 </template>
 
 <script>
@@ -13,6 +13,9 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-.home
-  background-color:rgba(255,255,255,0.7)
+.container-fluid
+  img
+    max-width : 7rem
+  span
+    font-size : 7rem
 </style>
