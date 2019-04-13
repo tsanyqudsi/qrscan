@@ -32,6 +32,7 @@
 import graphqlFunction from '@/graphqlFunction';
 import basicFunction from '@/basicFunction';
 import address from '@/address';
+import headers from '@/headers';
 
 export default {
   name: 'data-table',
@@ -48,7 +49,7 @@ export default {
 
   methods: {
     fetchBio() {
-      this.axios.get(address + ':3000/get-bio')
+      this.axios.get(address + ':3000/get-bio', headers)
       .then((response) => {
         this.bios = response.data;
       });

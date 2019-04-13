@@ -180,7 +180,7 @@ export default {
       };
       this.createIdb(postObj);
       alert("Data Posted");
-      this.$router.push('/tables');
+      this.$router.push('/qrscan');
       location.reload();
     }
   }
