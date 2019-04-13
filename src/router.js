@@ -7,7 +7,6 @@ import UserProfileLite from './views/UserProfileLite.vue';
 import AddNewPost from './views/AddNewPost.vue';
 import Errors from './views/Errors.vue';
 import ComponentsOverview from './views/ComponentsOverview.vue';
-import Tables from './views/Tables.vue';
 import BlogPosts from './views/BlogPosts.vue';
 import Login from './views/Login.vue';
 import Register from './views/Register.vue';
@@ -16,13 +15,13 @@ import QRScan from './views/Qr_scan.vue';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  linkActiveClass: 'active',
-  linkExactActiveClass: 'exact-active',
-  scrollBehavior() {
-    return { x: 0, y: 0 };
-  },
+  // mode: 'history',
+  // base: process.env.BASE_URL,
+  // linkActiveClass: 'active',
+  // linkExactActiveClass: 'exact-active',
+  // scrollBehavior() {
+  //   return { x: 0, y: 0 };
+  // },
   routes: [
     {
       path: '/',
@@ -74,14 +73,19 @@ export default new Router({
       component: ComponentsOverview,
     },
     {
-      path: '/tables',
+      path: '/admin/tables',
       name: 'tables',
-      component: Tables,
+      component: () => import('./views/Tables.vue'),
     },
     {
       path: '/blog-posts',
       name: 'blog-posts',
       component: BlogPosts,
+    },
+    {
+      path: '/not-admin',
+      name: 'not-admin',
+      component: () => import('./views/NotAdmin.vue'),
     },
     {
       path: '*',

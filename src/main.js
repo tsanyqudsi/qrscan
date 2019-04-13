@@ -35,6 +35,23 @@ Vue.use(SuiVue);
 Vue.use(VueSession);
 Vue.use(VueQrcodeReader);
 
+//router authentication
+router.beforeEach((to, from, next) => {
+    if(to.path.split('/')[1].split('/')[0] == 'admin') {
+    	if(localStorage.getItem('user_role') == 'admin') {
+    		next();
+    	}
+    	else {
+	    	next({
+	        	path: '/not-admin',
+	        })
+	    }
+    }
+    else {
+    	next();
+    }
+});
+
 new Vue({
   router,
   render: h => h(App),

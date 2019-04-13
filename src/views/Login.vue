@@ -4,7 +4,7 @@
         d-card-body
           d-image(src='favicon/ms-icon-70x70.png')
           h6 Welcome To {{title}}
-          d-form(@submit='login', validated='')
+          d-form(validated='')
           .form-group
             label(for='f2_Email') Email Address
             d-input#f2_Email.mb-2.mr-sm-2.mb-sm-0(v-model='input.email', placeholder='email@example.com', required='')
@@ -19,7 +19,7 @@
             d-form-checkbox(v-model='form.tos', value='tos_agree', unchecked-value='tos_do_not_agree')
               | I agree with the 
               a(href='#') Terms of Service
-          d-button(type='submit') Login
+          d-button(type='submit' v-on:click='login') Login
 </template>
 
 <script>
@@ -55,13 +55,14 @@ export default {
           console.log(response.data);
           if(response.data.token) {
             alert("Login Success");
-            this.$router.push('/tables');
+            this.$router.push('/blog-overview');
             location.reload();
             this.$session.start();
             this.$session.set('user', response.data.response);
             document.cookie = "token=" + response.data.token;
             document.cookie = "user_session=" + this.$session.get('user')._id;
             document.cookie = "user_authority=" + this.$session.get('user').authority;
+            localStorage.setItem('user_role', this.$session.get('user').role);
           }
           else {
             alert("Incorrect Credential");
